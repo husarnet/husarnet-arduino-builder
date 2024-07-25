@@ -10,6 +10,8 @@ In the root of the repository there are 4 folders used in the build process:
 * `husarnet-esp32-arduino` - submodule containing generated Husarnet ESP32 Arduino library
 * `husarnet-esp32-platformio` - submodule containing generated Husarnet ESP32 PlatformIO library
 
+Husarnet library is built from [the ESP-IDF component](https://github.com/husarnet/esp_husarnet/tree/master). Currently the builder selects latest stable released version on the ESP Registry. All core Husarnet code is taken from ESP-IDF port resulting in the same codebase across frameworks.
+
 ## Steps
 
 The release process is automated and involves the following steps:
