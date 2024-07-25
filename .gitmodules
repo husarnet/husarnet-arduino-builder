@@ -1,0 +1,9 @@
+[submodule "esp32-arduino-lib-builder"]
+	path = esp32-arduino-lib-builder
+	url = https://github.com/espressif/esp32-arduino-lib-builder
+[submodule "husarnet-esp32-arduino"]
+	path = husarnet-esp32-arduino
+	url = https://github.com/husarnet/husarnet-esp32-arduino
+[submodule "husarnet-esp32-platformio"]
+	path = husarnet-esp32-platformio
+	url = https://github.com/husarnet/husarnet-esp32-platformio
