@@ -1,4 +1,5 @@
 import yaml
+import json
 import argparse
 from os import environ
 from semver import Version
@@ -32,7 +33,7 @@ def read_arduino_version() -> Version:
    
 def read_pio_version() -> Version:
   with open(pio_manifest_path, 'r') as file:
-    return Version.parse(yaml.safe_load(file)["version"])
+    return Version.parse(json.load(file)["version"])
 
 
 def write_arduino_version(version: Version):
@@ -48,10 +49,10 @@ def write_arduino_version(version: Version):
 
 def write_pio_version(version: Version):
   with open(pio_manifest_path, 'r') as file:
-    manifest = yaml.safe_load(file)
+    manifest = json.load(file)
   manifest["version"] = str(version)
   with open(pio_manifest_path, 'w') as file:
-    yaml.dump(manifest, file)
+    json.dump(manifest, file, indent=2)
 
 
 # Command handlers
