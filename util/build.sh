@@ -37,6 +37,7 @@ echo "--- Updating library builder ---"
 git -C ${lib_builder_base} fetch
 git -C ${lib_builder_base} reset --hard
 git -C ${lib_builder_base} pull
+git -C ${lib_builder_base} clean -fdx
 
 # Remove unnecessary components to speed up the build
 # and add Husarnet library to the IDF manifest

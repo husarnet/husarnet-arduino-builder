@@ -7,10 +7,16 @@ release_platformio() {
 
   echo "--- Releasing PlatformIO library ---"
   echo "Checking for PlatformIO CLI"
-  pio version
+  pio --version
 
   echo "Pushing changes to the repository"
   git add .
+  git status
+  git diff
+
+  echo
+  echo "Check the diff before committing"
+  confirm_action "Commit changes"
   git commit -m "Release v$(get_pio_version)"
   git push
 
@@ -32,9 +38,16 @@ release_arduino() {
 
   echo "--- Releasing Arduino library ---"
   echo "Pushing changes to the repository"
-  # git add .
-  # git commit -m "Release v$(get_arduino_version)"
-  # git push
+  git add .
+  git status
+  git diff
+
+  echo
+  echo "Check the diff before committing"
+  confirm_action "Commit changes"
+
+  git commit -m "Release v$(get_arduino_version)"
+  git push
 
   echo "Creating tagged release"
   gh release create v$(get_arduino_version) -t "Husarnet v$(get_arduino_version)"

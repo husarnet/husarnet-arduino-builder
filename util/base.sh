@@ -46,3 +46,15 @@ get_pio_version() {
 get_arduino_version() {
   echo $(cat ${arduino_base}/library.properties | grep version | cut -d= -f2)
 }
+
+confirm_action() {
+  local action="$1"
+
+  read -p "${action} (y/N)? " -n 1 -r
+  echo
+
+  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    echo "Aborting"
+    exit 1
+  fi
+}
