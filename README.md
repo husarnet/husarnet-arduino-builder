@@ -33,9 +33,9 @@ Changes to the files in libraries should be done after the build step. Please no
 ### Bump version
 
 ```
-util/bump_version.sh get
-util/bump_version.sh set {arduino/pio/all} X.X.X
-util/bump_version.sh bump {arduino/pio/all} {major/minor/patch}
+util/version.sh get
+util/version.sh set {arduino/pio/all} X.X.X
+util/version.sh bump {arduino/pio/all} {major/minor/patch/prerelease}
 ```
 
 This script allows to fetch, set and bump the version of the Arduino/PlatformIO Husarnet library. It will update the version in both libraries manifest files. Usually running the `bump all patch` command is enough.

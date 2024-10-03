@@ -9,6 +9,9 @@ release_platformio() {
   echo "Checking for PlatformIO CLI"
   pio --version
 
+  echo "Checking if user is logged in"
+  pio account show > /dev/null
+
   echo "Pushing changes to the repository"
   git add .
   git status
